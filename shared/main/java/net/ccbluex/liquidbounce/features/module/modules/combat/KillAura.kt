@@ -45,16 +45,16 @@ import java.awt.Color
 import java.util.*
 import kotlin.math.*
 
-@ModuleInfo(name = "KillAura", description = "Automatically attacks targets around you.",
+@ModuleInfo(name = "Киллаура", description = "Automatically attacks targets around you.",
         category = ModuleCategory.COMBAT, keyBind = Keyboard.KEY_R)
-class KillAura : Module() {
+class Киллаура : Module() {
 
     /**
      * OPTIONS
      */
 
     // CPS - Attack speed
-    private val maxCPS: IntegerValue = object : IntegerValue("MaxCPS", 8, 1, 20) {
+    private val MaxCPS: IntegerValue = object : IntegerValue("МаксКПС", 8, 1, 20) {
         override fun onChanged(oldValue: Int, newValue: Int) {
             val i = minCPS.get()
             if (i > newValue) set(i)
@@ -63,7 +63,7 @@ class KillAura : Module() {
         }
     }
 
-    private val minCPS: IntegerValue = object : IntegerValue("MinCPS", 5, 1, 20) {
+    private val minCPS: IntegerValue = object : IntegerValue("МинКПС", 5, 1, 20) {
         override fun onChanged(oldValue: Int, newValue: Int) {
             val i = maxCPS.get()
             if (i < newValue) set(i)
@@ -72,12 +72,12 @@ class KillAura : Module() {
         }
     }
 
-    private val hurtTimeValue = IntegerValue("HurtTime", 10, 0, 10)
+    private val hurtTimeValue = IntegerValue("Задержка", 10, 0, 10)
     private val cooldownValue = FloatValue("Cooldown", 1f, 0f, 1f)
 
     // Range
-    private val rangeValue = FloatValue("Range", 3.7f, 1f, 8f)
-    private val throughWallsRangeValue = FloatValue("ThroughWallsRange", 3f, 0f, 8f)
+    private val rangeValue = FloatValue("Дальность", 3.7f, 1f, 8f)
+    private val throughWallsRangeValue = FloatValue("ДальностьСквозьСтены", 3f, 0f, 8f)
     private val rangeSprintReducementValue = FloatValue("RangeSprintReducement", 0f, 0f, 0.4f)
 
     // Modes
