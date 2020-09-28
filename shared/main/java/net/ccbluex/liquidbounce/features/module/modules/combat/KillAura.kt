@@ -45,9 +45,9 @@ import java.awt.Color
 import java.util.*
 import kotlin.math.*
 
-@ModuleInfo(name = "KillAura", description = "Automatically attacks targets around you.",
+@ModuleInfo(name = "Киллаура", description = "Atakyet vsex mobov i igrokov na opredelennou dictancii",
         category = ModuleCategory.COMBAT, keyBind = Keyboard.KEY_R)
-class KillAura : Module() {
+class Киллаура : Module() {
 
     /**
      * OPTIONS
